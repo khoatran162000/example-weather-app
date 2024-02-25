@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp">
+
+    <ImageView
+        android:id="@+id/imgWeather"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/today"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgWeather"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgDot"
+        android:layout_width="3dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_dot"
+        app:layout_constraintBottom_toBottomOf="@id/txtDay"
+        app:layout_constraintStart_toEndOf="@id/txtDay"
+        app:layout_constraintTop_toTopOf="@id/txtDay" />
+
+    <TextView
+        android:id="@+id/txtShortDescriptionWeather"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/sun"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtDay"
+        app:layout_constraintEnd_toStartOf="@+id/txtTemperatureMax"
+        app:layout_constraintStart_toEndOf="@id/imgDot"
+        app:layout_constraintTop_toTopOf="@id/txtDay" />
+
+    <TextView
+        android:id="@+id/txtTemperatureMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/txtSlash"
+        app:layout_constraintEnd_toStartOf="@id/txtSlash"
+        app:layout_constraintTop_toTopOf="@id/txtSlash"
+        tools:text="20°" />
+
+    <TextView
+        android:id="@+id/txtSlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="2dp"
+        android:text="/"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtTemperatureMin"
+        app:layout_constraintEnd_toStartOf="@id/txtTemperatureMin"
+        app:layout_constraintTop_toTopOf="@id/txtTemperatureMin" />
+
+    <TextView
+        android:id="@+id/txtTemperatureMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="20°" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

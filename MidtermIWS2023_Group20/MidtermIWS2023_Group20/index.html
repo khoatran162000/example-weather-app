@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- Icon Font Awesome -->
+    <script src="https://kit.fontawesome.com/24abdd306a.js" crossorigin="anonymous"></script>
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <div class="weather-forecast">
+        <div id="container">
+            <div class="content text-white">
+                <div class="temp ">
+                    <h1 id="temp"></h1>
+                </div>
+                <div class="city-time">
+                    <div class="city">
+                        <h4 id="location">London</h4>
+                    </div>
+                    <div class="time">
+                        <span id="present-time"></span>
+                        <span> - </span>
+                        <span id="date"></span>
+                    </div>
+                </div>
+                <div class="weather">
+                    <div id="weather-icon">
+                    </div>
+                    <span id="weatherCond">Cloudy</span>
+                </div>
+            </div>
+        </div>
+        <div id="panel">
+            <form action="" method="get" id="locationInput" >
+                <input type="text" class="search-bar text-white" placeholder="Search location...">
+                <button type="submit" class="search-icon" >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <div class="panel-content">
+                <ul class="city-list">
+                    <li class="city-item">
+                        <a href="" class="location-item text-grey">London</a>
+                    </li>
+                    <li class="city-item">
+                        <a href="" class="location-item text-grey">Paris</a>
+                    </li>
+                    <li class="city-item">
+                        <a href="" class="location-item text-grey">New York</a>
+                    </li>
+                    <li class="city-item">
+                        <a href="" class="location-item text-grey">Da Nang</a>
+                    </li>
+                </ul>
+                <hr class="text-white">
+                <div class="weather-detail-container">
+                    <h4 class="weather-details text-white">Weather details</h4>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>Cloudy</span>
+                            <span id="cloud"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Humidity</span>
+                            <span id="humid"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Wind</span>
+                            <span id="wind"></span>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="weather-detail-container">
+                    <h4 class="weather-details text-white">Weather forecast</h4>
+                    
+                    <h5 id="forecast-date1" class="weather-details text-white forecast-date "></h5>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>High</span>
+                            <span id="max-temp1"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Low</span>
+                            <span id="min-temp1"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Weather</span>
+                            <span id="weather1"></span>
+                        </li>
+                    </ul>
+                    <h5 id="forecast-date2" class="weather-details text-white forecast-date "></h5>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>High</span>
+                            <span id="max-temp2"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Low</span>
+                            <span id="min-temp2"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Weather</span>
+                            <span id="weather2"></span>
+                        </li>
+                    </ul>
+                    <h5 id="forecast-date3" class="weather-details text-white forecast-date "></h5>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>High</span>
+                            <span id="max-temp3"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Low</span>
+                            <span id="min-temp3"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Weather</span>
+                            <span id="weather3"></span>
+                        </li>
+                    </ul>
+                    <h5 id="forecast-date4" class="weather-details text-white forecast-date "></h5>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>High</span>
+                            <span id="max-temp4"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Low</span>
+                            <span id="min-temp4"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Weather</span>
+                            <span id="weather4"></span>
+                        </li>
+                    </ul>
+                    <h5 id="forecast-date5" class="weather-details text-white forecast-date "></h5>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>High</span>
+                            <span id="max-temp5"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Low</span>
+                            <span id="min-temp5"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Weather</span>
+                            <span id="weather5"></span>
+                        </li>
+                    </ul>
+                    <h5 id="forecast-date6" class="weather-details text-white forecast-date "></h5>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>High</span>
+                            <span id="max-temp6"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Low</span>
+                            <span id="min-temp6"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Weather</span>
+                            <span id="weather6"></span>
+                        </li>
+                    </ul>
+                    <h5 id="forecast-date7" class="weather-details text-white forecast-date "></h5>
+                    <ul class="weather-details-list">
+                        <li class="weather-details-item text-grey">
+                            <span>High</span>
+                            <span id="max-temp7"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Low</span>
+                            <span id="min-temp7"></span>
+                        </li>
+                        <li class="weather-details-item text-grey">
+                            <span>Weather</span>
+                            <span id="weather7"></span>
+                        </li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p id="demo"></p>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midterm - Weather Forecast App</title>
+  <meta name="title" content="group5">
+  <meta name="description" content="weather forecast app by group 5">
+  <!-- shortcut icon -->
+  <link rel="shortcut icon" href="shortcut icon.png" type="image/icon">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <!-- css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- js link -->
+  <script src="./assets/js/app.js" type="module"></script>
+  <script src="./assets/js/route.js" type="module"></script>
+</head>
+
+<body onmousemove="myFunc()">
+
+  <!-- HEADER -->
+
+  <header class="header">
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.png" width="364" height="58" alt="logo">
+      </a>
+
+      <div class="search-view" data-search-view>
+
+        <div class="search-wrapper">
+          <input type="search" name="search" list="suggestions" placeholder="Search city..." autocomplete="off" class="search-field" data-search-field>
+            <datalist id="suggestions">
+              <option value="Hanoi"></option>
+              <option value="Beijing"></option>
+              <option value="London"></option>
+              <option value="Moscow"></option>
+              <option value="Santiago"></option>
+            </datalist>
+
+          <span class="m-icon leading-icon">search</span>
+
+          <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+            <span class="m-icon">arrow_back</span>
+          </button>
+        </div>
+
+        <div class="search-result" data-search-result></div>
+
+      </div>
+
+      <div class="header-actions">
+
+        <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
+          <span class="m-icon icon">search</span>
+        </button>
+
+        <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
+          <span class="m-icon">my_location</span>
+
+          <span class="span">Current Location</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+    <article class="container" data-container>
+
+      <div class="content-left">
+
+        <!-- CURRENT WEATHER -->
+
+        <section class="section current-weather" aria-label="current weather" data-current-weather></section>
+
+        <!-- 5DAY FORECAST -->
+
+        <section class="section forecast" aria-labelledby="forecast-label" data-5-day-forecast></section>
+      </div>
+
+
+      <div class="content-right">
+
+        <!-- HIGHLIGHTS -->
+
+        <section class="section highlights" aria-labelledby="highlights-label" data-highlights></section>
+
+        <!-- HOURLY FORECAST -->
+
+        <section class="section hourly-forecast" aria-label="hourly forecast" data-hourly-forecast></section>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+          <p class="body-3">
+            A Weather Forecast app by Group 5 - IWS Spring 2023.
+          </p>
+        </footer>
+      </div>
+
+      <div class="loading" data-loading></div>
+
+    </article>
+  </main>
+
+  <!-- 404 ERROR -->
+
+  <section class="error-content" data-error-content>
+
+    <h2 class="heading">404</h2>
+
+    <p class="body-1">Page not found!</p>
+
+    <a href="#/weather?lat=39.904200&lon=116.407396" class="btn-primary">
+      <!-- default location: Beijing -->
+      <span class="span">Go Home</span>
+    </a>
+
+  </section>
+
+  <!-- CHANGE BACKGROUND WITH CITY -->
+
+  <script type="text/javascript">
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function myFunc() {
+      var city = getCookie("city");
+      var now = new Date();
+      var hours = now.getHours();
+      var psj = 0;
+      if (city == "London") {
+        if (hours > 6 && hours < 14) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1501418611786-e29f9929fe03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 13 && hours < 20) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1601345459799-245d61f56121?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+  
+        }
+        else if (hours > 19 || hours < 2) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1567304441104-d7a7d3e4bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80'
+  
+        }
+        else if (hours > 1 && hours < 7) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1651683298355-fb85321852fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+
+      }
+
+      else if (city == "Hanoi") {
+        if (hours > 23 || hours < 7) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1501418611786-e29f9929fe03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 6 && hours < 13) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1601345459799-245d61f56121?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+
+        else if (hours > 12 && hours < 19) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1567304441104-d7a7d3e4bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80'
+        }
+
+        else if (hours > 18 && hours < 24) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1651683298355-fb85321852fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' 
+        }
+      }
+
+      else if (city == "Beijing") {
+        if (hours > 22 || hours < 6) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1501418611786-e29f9929fe03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 5 && hours < 12) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1601345459799-245d61f56121?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 11 && hours < 18) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1567304441104-d7a7d3e4bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80'
+        }
+        else if (hours > 17 && hours < 23) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1651683298355-fb85321852fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+      }
+
+      else if (city == "Moscow") {
+        if (hours > 2 && hours < 10) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1501418611786-e29f9929fe03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 9 && hours < 16) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1601345459799-245d61f56121?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 15 && hours < 22) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1567304441104-d7a7d3e4bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80'
+        }
+        else if (hours > 21 || hours < 3) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1651683298355-fb85321852fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+      }
+
+      else if (city == "Santiago") {
+        if (hours > 8 && hours < 16) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1501418611786-e29f9929fe03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 15 && hours < 22) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1601345459799-245d61f56121?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+        else if (hours > 21 || hours < 4) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1567304441104-d7a7d3e4bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80'
+        }
+        else if (hours > 3 && hours < 9) {
+          document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1651683298355-fb85321852fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+        }
+      }
+      
+      return
+    }
+
+  </script>
+
+</body>
+
+</html>

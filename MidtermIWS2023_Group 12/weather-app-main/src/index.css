@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+#wrap {
+    width: 100%;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pad-12 {
+    margin: 0 -12px !important;
+}
+.pad-8 {
+    margin: 0 -8px !important;
+}
+.border-color-5382B7 {
+    border-color: #5382b7;
+}
+.bg-color-5382B7 {
+    background-color: #5382b7;
+}
+.bg-color-E3F2FF {
+    background-color: #e3f2ff;
+}
+.bg-color-B6D5F0 {
+    background-color: #b6d5f0;
+}
+.bg-color-#CAE1F6 {
+    background-color: #cae1f6;
+}
+.font-be {
+    font-family: "Be Vietnam Pro", sans-serif !important;
+}
+.font-quick {
+    font-family: "Quicksand", sans-serif !important;
+}
+@media (max-width: 1280px) {
+    .bg-img {
+        background: url("https://res.cloudinary.com/dwohqjquz/image/upload/v1678472720/4f_lhd2s7.png");
+    }
+}
+@media (min-width: 1280px) {
+    .bg-img {
+        background: url("https://res.cloudinary.com/dwohqjquz/image/upload/v1678554749/4f_eqd2fd.png");
+    }
+}

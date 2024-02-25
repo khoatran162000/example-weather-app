@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather website</title>
+  <link rel="icon" type="image/x-icon" href="../src/img/weatherWeb-icon.png" />
+  <script src="../src/script.js" defer></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka One" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-branch" href="#">
+        <img src="../src/img/logo.png" height="50" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto options">
+          <li class="nav-item">
+            <a class="nav-link hourly" href="#">Today</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link week active" href="#">Week</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link celcius active" href="#">°C</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fahrenheit" href="#">°F</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div class="sidebar">
+      <div>
+        <form class="search" id="search">
+          <input type="text" id="query" placeholder="Search..." />
+          <button id="myBtn"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="weather-icon">
+          <img id="icon" src="img/icon-01.png" alt="" />
+        </div>
+        <div class="temperature">
+          <h1 id="temp">0</h1>
+          <span class="temp-unit">°C</span>
+        </div>
+
+        <div class="divider"></div>
+        <div class="date-time">
+          <i class="fas fa-calendar"></i>
+          <p id="date-time">Monday, 12:00</p>
+        </div>
+        <div class="condition-rain">
+          <div class="condition">
+            <i class="fas fa-cloud"></i>
+            <p id="condition">condition</p>
+          </div>
+          <div class="rain">
+            <i class="fas fa-tint"></i>
+            <p id="rain">perc - 0%</p>
+          </div>
+        </div>
+      </div>
+      <div class="location">
+        <div class="location-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="location-text">
+          <p id="location">location</p>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="highlights">
+        <h2 class="heading">today's highlights</h2>
+        <div class="cards">
+          <div class="card2">
+            <h4 class="card-heading">UV Index</h4>
+            <div class="content">
+              <p class="uv-index">0</p>
+              <p class="uv-text">Low</p>
+            </div>
+          </div>
+          <div class="card2">
+            <h4 class="card-heading">Wind Status</h4>
+            <div class="content">
+              <p class="wind-speed">0</p>
+              <p>Km/h</p>
+            </div>
+          </div>
+          <div class="card2">
+            <h4 class="card-heading">Sunrise & Sunset</h4>
+            <div class="content">
+              <p class="sun-rise">0</p>
+              <p class="sun-set">0</p>
+            </div>
+          </div>
+          <div class="card2">
+            <h4 class="card-heading">Humidity</h4>
+            <div class="content">
+              <p class="humidity">0</p>
+              <p class="humidity-status">Normal</p>
+            </div>
+          </div>
+          <div class="card2">
+            <h4 class="card-heading">Visibility</h4>
+            <div class="content">
+              <p class="visibilty">0</p>
+              <p class="visibilty-status">Normal</p>
+            </div>
+          </div>
+          <div class="card2">
+            <h4 class="card-heading">Air Quality</h4>
+            <div class="content">
+              <p class="air-quality">0</p>
+              <p class="air-quality-status">Normal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-details">
+        <div class="heading">Weather Details</div>
+        <div class="cards" id="weather-cards"></div>
+      </div>
+    </div>
+  </div>
+  <p class="quotes">"Wherever you go, no matter what the weather, always bring your own sunshine."</p>
+  <p class="author">Anthony J. D'Angelo</p>
+</body>
+
+</html>

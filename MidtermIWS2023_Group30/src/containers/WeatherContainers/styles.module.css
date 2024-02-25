@@ -1,0 +1,92 @@
+.box {
+    padding: 30px 60px;
+    position: relative;
+}
+
+.coverText {
+    position: absolute;
+    top: 20%;
+    left: 12%;
+    color: #594d6f;
+}
+
+.coverImage {
+    display: inline-block;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 20px;
+    object-position: 20% 0%;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.weatherTodayContainer {
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    background-color: #f8e6e8;
+}
+
+.activeWeatherToday {
+    border-color: #e9bcc4 !important;
+}
+
+.mainWeather {
+    background-color: #ece5ee;
+    padding: 0 !important;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.xlText {
+    font-size: 30px;
+}
+
+.lgTitle {
+    font-size: 24px;
+}
+
+.mdSubtitle {
+    font-size: 18px;
+    max-height: 40px;
+}
+
+.light {
+    color: #ccc !important;
+}
+
+.smallIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.mdIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.lgIcon {
+    width: 60px;
+    height: 50px;
+}
+
+.rightNav {
+    background-color: red;
+    height: 100%;
+}
+
+.activeIconButton {
+    background-color: #ccc !important;
+}
+
+.textColor {
+    color: #594d6f;
+}

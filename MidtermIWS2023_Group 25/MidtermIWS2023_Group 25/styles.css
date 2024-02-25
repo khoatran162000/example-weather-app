@@ -1,0 +1,57 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #222;
+    background-image: url('images/cover.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-weather {
+    background: #000000d0;
+    padding: 2em;
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+}
+
+.modal-body {
+    color: #000;
+}
+
+/* #staticBackdrop {
+    display: block !important;
+    opacity: 1;
+} */
+
+.image-item {
+    max-width: 150px;
+    max-height: 120px;
+}
+
+.my-modal {
+    background: #f5ebebf5 !important;
+    color: #000 !important;
+}
+
+.my-card {
+    background-color: #F5EBEB !important;
+}
+
+.card {
+    border-radius: 20px !important;
+}
+
+.card-small {
+    width: 80% !important;
+}
+
+.link-custom {
+    color: #000 !important;
+}

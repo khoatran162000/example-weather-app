@@ -1,0 +1,40 @@
+.textGray {
+    color: #bfbfbf;
+    margin: 0;
+}
+
+.appBar {
+    background-color: #ece5ee !important;
+}
+
+.titleAppBar {
+    color: #525051;
+    font-weight: bold;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.main {
+    width: 100vw;
+    overflow: hidden;
+    padding: 0;
+    background-color: #ece5ee !important;
+    min-height: 100vh;
+}
+
+.drawer {
+    background-color: #ece5ee !important;
+}
+
+.css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper {
+    background-color: #ece5ee !important;
+}
+
+.flexBetween {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}

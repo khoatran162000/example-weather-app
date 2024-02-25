@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER APP</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+<!-- column_30 -->
+    <div class="col_30">
+        <div class="header">
+            <h1>WEATHER APP</h1>
+            <div class="search_city">
+                <input type="text" name="" id="input" placeholder="Enter city name">
+                    <button id="search" onclick="searchByCity()">Search</button>
+                </input>
+            </div>
+        </div>
+    <!-- thông tin thời tiết hiện tại -->
+        <div class="weather">
+            <span id="clouds">
+                <img src="./img/Broken Clouds.png" alt="img" class="clouds_img">
+            </span>
+            <div class="temp-box">
+                <p id="temperature">15 °C</p>
+
+                    <div class="date" id="date">
+                        Monday, 24 Mar 2023
+                    </div>
+
+            </div>
+            <div class="temp-box1">
+                <div class="humidity">
+                    <img src="./img/water.png" alt="humidity" class="humidity_icon">
+                    <p class="humidity_des">20%</p>
+                </div>
+                <div class="wind">
+                    <img src="./img/wind.png" alt="wind" class="wind_icon">
+                    <p class="wind_des">5 km/h</p>
+                </div>
+
+            </div>
+            <h2 id="city">Ha Noi, VN</h2>
+            <img src="./img/city1.jpg" alt="" id="img" >
+        </div>
+    </div>
+    <!-- end col_30 -->
+
+    <!-- col_70 -->
+    <div class="col_70">
+
+        <!-- dự báo theo giờ -->
+        <div class="forecastH">
+            <p class="cast-header">Upcoming forecast</p>
+            <div class="templist">
+
+                <div class="next">
+                    <div>
+                        <p class="time">10:00 AM</p>
+                        <p>20 °C</p>
+                    </div>
+                    <img src="./img/Light Rain.png" alt="light rain" class="desc"></img>
+                </div>
+
+                <div class="next">
+                    <div>
+                        <p class="time">13:00 PM</p>
+                        <p>25 °C</p>
+                    </div>
+                    <img src="./img/Light Rain.png" alt="light rain" class="desc"></img>
+                </div>
+
+                <div class="next">
+                    <div>
+                        <p class="time">17:00 PM</p>
+                        <p>24 °C</p>
+                    </div>
+                    <img src="./img/Light Rain.png" alt="light rain" class="desc"></img>
+                </div>
+
+                <div class="next">
+                    <div>
+                        <p class="time">20:00 PM</p>
+                        <p>24 °C</p>
+                    </div>
+                    <img src="./img/Light Rain.png" alt="light rain" class="desc"></img>
+                </div>
+
+                <div class="next">
+                    <div>
+                        <p class="time">23:00 PM</p>
+                        <p>23 °C</p>
+                    </div>
+                    <img src="./img/Light Rain.png" alt="light rain" class="desc"></img>
+                </div>
+
+                <div class="next">
+                    <div>
+                        <p class="time">8:30 PM</p>
+                        <p>29 °C</p>
+                    </div>
+                    <img src="./img/Light Rain.png" alt="light rain" class="desc"></img>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- dự báo theo ngày -->
+        <div class="forecastD">
+            <p class="cast-header"> Next 5 days forecast</p>
+            <div class="weekF">
+    
+                <div class="dayF">
+                    <p class="date">Fri Mar 31 2023</p>
+                    <img src="./img/Overcast Clouds.png" alt="Overcast Clouds" class="desc"></img>
+                    <div class="info">
+                        <div class="humidity">
+                            <img src="./img/water.png" alt="humidity" class="humidity_icon">
+                            <p class="humidity_des1">20%</p>
+                        </div>
+                        <p class="temp">31°/29°</p>
+                    </div>
+                </div>
+
+                <div class="dayF">
+                    <p class="date">Sat Apr 01 2023</p>
+                    <img src="./img/Overcast Clouds.png" alt="Overcast Clouds" class="desc"></img>
+                    <div class="info">
+                        <div class="humidity">
+                            <img src="./img/water.png" alt="humidity" class="humidity_icon">
+                            <p class="humidity_des1">20%</p>
+                        </div>
+                        <p class="temp">31°/29°</p>
+                    </div>
+                </div>
+    
+                <div class="dayF">
+                    <p class="date">Sun Apr 02 2023</p>
+                    <img src="./img/Overcast Clouds.png" alt="Overcast Clouds" class="desc"></img>
+                    <div class="info">
+                        <div class="humidity">
+                            <img src="./img/water.png" alt="humidity" class="humidity_icon">
+                            <p class="humidity_des1">20%</p>
+                        </div>
+                        <p class="temp">31°/29°</p>
+                    </div>
+                </div>
+    
+                <div class="dayF">  
+                    <p class="date">Mon Apr 03 2023</p>
+                    <img src="./img/Overcast Clouds.png" alt="Overcast Clouds" class="desc"></img>
+                    <div class="info">
+                        <div class="humidity">
+                            <img src="./img/water.png" alt="humidity" class="humidity_icon">
+                            <p class="humidity_des1">20%</p>
+                        </div>
+                        <p class="temp">31°/29°</p>
+                    </div>
+                </div>
+    
+                <div class="dayF">
+                    <p class="date">Tue Apr 04 2023</p>
+                    <img src="./img/Overcast Clouds.png" alt="Overcast Clouds" class="desc"></img>
+                    <div class="info">
+                        <div class="humidity">
+                            <img src="./img/water.png" alt="humidity" class="humidity_icon">
+                            <p class="humidity_des1">20%</p>
+                        </div>
+                        <p class="temp">31°/29°</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<!-- end col_70-->
+
+    <script src="./weather.js"></script>
+</body>
+</html>

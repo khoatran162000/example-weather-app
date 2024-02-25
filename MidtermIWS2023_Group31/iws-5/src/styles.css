@@ -1,0 +1,64 @@
+body {
+    background-color: #0a121d;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.my-app {
+    height: 100vh;
+}
+
+.nav-custom {
+    background-color: #202b3b;
+    height: 90vh;
+    border-radius: 20px !important;
+}
+
+.main-bg {
+    background-color: #202b3b !important;
+}
+
+.smallIcon {
+    width: 30px;
+    height: 20px;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.large-icon {
+    width: 150px;
+    height: 120px;
+}
+
+.medium-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.input-search {
+    background-color: #202b3b !important;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.today-info {
+    background-color: #202b3b;
+    border-radius: 10px;
+}
+
+.detail-info {
+    background-color: #202b3b;
+    border-radius: 10px;
+}

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_day"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.activity.main.MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_fileName="rain.json"
+        app:lottie_speed="1"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/frLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80979393"
+        android:visibility="gone">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_loading"
+            android:padding="18sp"
+            android:layout_gravity="center">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/white"/>
+        </FrameLayout>
+    </FrameLayout>
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingHorizontal="10dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            android:paddingBottom="40dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glTop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glVerticalCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/txtTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="@color/textColor"
+                android:textSize="80sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/glTop" />
+
+            <ImageView
+                android:id="@+id/imgWeather"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add"
+                app:layout_constraintEnd_toEndOf="@id/txtTemperature"
+                app:layout_constraintStart_toStartOf="@id/txtTemperature"
+                app:layout_constraintTop_toBottomOf="@id/txtTemperature"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txtLabelTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/degreeC"
+                android:textColor="@color/textColor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/txtTemperature"
+                app:layout_constraintTop_toTopOf="@id/txtTemperature" />
+
+            <TextView
+                android:id="@+id/txtDescriptionWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sun"
+                android:textColor="@color/textColor"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgWeather" />
+
+            <TextView
+                android:id="@+id/txtMoreDailyWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/more"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                app:drawableEndCompat="@drawable/ic_navigate_next"
+                app:drawableTint="@color/textColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/glBottom" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvDailyWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/txtMoreDailyWeather"
+                tools:itemCount="3"
+                tools:layout_editor_absoluteX="43dp"
+                tools:listitem="@layout/item_short_daily_weather" />
+
+            <TextView
+                android:id="@+id/btnPredict5Day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_conner_25"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="@string/predict_5_day"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rcvDailyWeather" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvHourlyWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPredict5Day"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_hourly_weather" />
+
+            <ImageView
+                android:id="@+id/imgBackgroundInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rectangle_conner_25"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rcvHourlyWeather" />
+
+            <TextView
+                android:id="@+id/txtFeeling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/feeling"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/imgBackgroundInfo"
+                app:layout_constraintTop_toTopOf="@id/imgBackgroundInfo" />
+
+            <TextView
+                android:id="@+id/txtTemperatureFeeling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/txtFeeling"
+                app:layout_constraintTop_toBottomOf="@id/txtFeeling"
+                tools:text="28℃" />
+
+            <TextView
+                android:id="@+id/txtMaybeRain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/maybe_rain"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/txtTemperatureFeeling"
+                app:layout_constraintTop_toBottomOf="@id/txtTemperatureFeeling" />
+
+            <TextView
+                android:id="@+id/txtPercentRain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/txtMaybeRain"
+                app:layout_constraintTop_toBottomOf="@id/txtMaybeRain"
+                tools:text="40%" />
+
+            <TextView
+                android:id="@+id/txtWindVelocityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/wind_velocity"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/txtPercentRain"
+                app:layout_constraintTop_toBottomOf="@id/txtPercentRain" />
+
+            <TextView
+                android:id="@+id/txtWindVelocity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imgBackgroundInfo"
+                app:layout_constraintStart_toStartOf="@id/txtWindVelocityLabel"
+                app:layout_constraintTop_toBottomOf="@id/txtWindVelocityLabel"
+                tools:text="15,4km/h" />
+
+            <TextView
+                android:id="@+id/txtHumidityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/txtFeeling"
+                app:layout_constraintStart_toStartOf="@id/glVerticalCenter"
+                app:layout_constraintTop_toTopOf="@id/txtFeeling" />
+
+            <TextView
+                android:id="@+id/txtHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/txtTemperatureFeeling"
+                app:layout_constraintStart_toStartOf="@id/txtHumidityLabel"
+                app:layout_constraintTop_toTopOf="@id/txtTemperatureFeeling"
+                tools:text="61%" />
+
+            <TextView
+                android:id="@+id/txtPressureLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pressure"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/txtMaybeRain"
+                app:layout_constraintStart_toStartOf="@id/glVerticalCenter"
+                app:layout_constraintTop_toTopOf="@id/txtMaybeRain" />
+
+            <TextView
+                android:id="@+id/txtPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/txtPercentRain"
+                app:layout_constraintStart_toStartOf="@id/txtPressureLabel"
+                app:layout_constraintTop_toTopOf="@id/txtPercentRain"
+                tools:text="1009mbar" />
+
+            <TextView
+                android:id="@+id/txtUVIndexLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/UVIndex"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/txtWindVelocityLabel"
+                app:layout_constraintStart_toStartOf="@id/glVerticalCenter"
+                app:layout_constraintTop_toTopOf="@id/txtWindVelocityLabel" />
+
+            <TextView
+                android:id="@+id/txtUVIndex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/txtWindVelocity"
+                app:layout_constraintStart_toStartOf="@id/txtUVIndexLabel"
+                app:layout_constraintTop_toTopOf="@id/txtWindVelocity"
+                tools:text="1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+body {
+    background-color: #E3DFFD;
+    font-family: 'Rubik', sans-serif;
+}
+
+.main-background-color {
+    background-color: #E3DFFD !important;
+}
+
+.second-background-color {
+    background-color: rgb(229, 209, 250, 0.2);
+}
+
+.third-bg-color {
+    background-color: #ECF2FF;
+}
+
+.detail-image {
+    width: 300px;
+    height: 180px;
+}
+
+.smallIcon {
+    width: 75px;
+    height: 45px;
+}
+
+.mdIcon {
+    width: 150px;
+    height: 90px;
+}
+
+.mediumIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.location {
+    position: relative;
+}
+
+.location span {
+    color: rgb(44, 40, 40);
+    position: absolute;
+    top: 20px;
+    z-index: 100;
+    left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.lg-text {
+    font-size: 20px;
+}
+
+.carousel-inner {
+    max-height: 95vh;
+}
+
+.custom-carou-item {
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0;
+}
+
+.tab-active {
+    background-color: #ccc;
+}
+
+.border-color {
+    border-color: #FFF4D2 !important;
+    border-width: 2px !important;
+}
+
+.purple-btn {
+    background-image: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+}
+
+.purple-btn:hover {
+    filter: brightness(1.2);
+}
+
+.icon-footer {
+    width: 20px;
+    height: 20px;
+}
+.card {
+    width: 90% !important;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px !important;
+}
+
+.detail-icon {
+    width: 32px;
+    height: 32px;
+}
+

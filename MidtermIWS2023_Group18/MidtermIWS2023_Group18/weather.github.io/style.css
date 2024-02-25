@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+    --primary-color: #5598fd;
+}
+
+
+.main {
+    background-color: #f6f6f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    padding: 25px 25px 25px 50px;
+    background: var(--primary-color);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("static/img/cd.jpeg");
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+}
+
+img {
+    width: 100%;
+}
+
+.sidebar {
+    background: rgba(255, 255, 255, 0.815);
+}
+
+.tim-kiem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: relative;
+}
+.tim-kiem input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ced4da;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #495057;
+}
+.tim-kiem input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+.tim-kiem button {
+    min-width: 40px;
+    height: 40px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+.tim-kiem ul {
+    max-height: 300px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.tim-kiem ul li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.tim-kiem ul li:last-child {
+    border-bottom: none;
+}
+.tim-kiem ul li:hover {
+    background-color: #f1f1f1;
+}
+.tim-kiem ul li.active {
+    background-color: #f1f1f1;
+}
+
+
+.main nav .lua-chon button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #495057;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.main nav .lua-chon button.active {
+    color: var(--primary-color);
+}
+
+.main nav .units button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #1a1a1a;
+    background-color: #fff;
+}
+.main nav .units button.active {
+    color: #fff;
+    background-color: #1a1a1a;
+}
+.the2 {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: cZ;
+}
+
+.the2 .card2 h2 {
+    font-size: 15px;
+    font-weight: 600;
+}
+.the2 .card2 .card-icon {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+.the2 .card2 .day-temp {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+}
+.noi-bat .heading {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #495057;
+}
+.the2 {
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    color: #1a1a1a;
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.the2 .card-heading {
+    color: #c2c2c2;
+}
+
+.the2 .noi-dung {
+    margin-top: 20px;
+}
+.the2 .noi-dung p:first-child {
+    text-align: center;
+    font-size: 30px;
+}
+.the2 .noi-dung p:nth-child(2) {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: left;
+}
+.credits {
+    text-align: center;
+    font-size: 12px;
+    color: #c2c2c2;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.img-location {
+    height: 180px;
+}
+.img-location .location-text{
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .img-mobile {
+        width: 56px!important; 
+        height: 57px;
+        padding-top: 13px;
+    }
+    .card-icon{
+        margin-bottom: 3px!important;
+    }
+    .card-icon img{
+        width: 85%;
+    }
+    .the2 .card2 h2 {
+        text-align: center;
+    }
+    .main nav .lua-chon button{
+        font-size: 13px;
+    }
+    .main nav .c-f button{
+        width: 30px;
+        height: 30px;
+        margin-right: 0px!important;
+    }
+    .lua-chon{
+        margin-bottom: 7px;
+    }
+    h6.flex-grow-1 {
+        margin-bottom: 0px;
+    }
+    .col-md-12.col-xs-12.mt-3{
+        margin-top: 0px!important;
+    }
+    .wrap.row.container-fluid .sidebar  {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .wrap.row.container-fluid .main  {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    div#location {
+        font-size: 15px!important;
+    }
+}

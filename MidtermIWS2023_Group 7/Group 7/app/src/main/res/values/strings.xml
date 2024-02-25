@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="degreeC">℃</string>
+    <string name="more">Thêm chi tiết</string>
+    <string name="predict_5_day">Dự đoán 5 ngày</string>
+    <string name="dark">Dark</string>
+    <string name="temperature">%s°</string>
+    <string name="temperatureC">%s°C</string>
+    <string name="velocity">%skm/h</string>
+    <string name="feeling">Cảm giác như</string>
+    <string name="percent">%s%%</string>
+    <string name="maybe_rain">Có thể mưa</string>
+    <string name="wind_velocity">Tốc độ gió</string>
+    <string name="humidity">Độ ẩm</string>
+    <string name="pressure">Áp suất</string>
+    <string name="pressureValue">%smbar</string>
+    <string name="UVIndex">Chỉ số UV</string>
+    <string name="todo">TODO</string>
+    <string name="today">Hôm nay</string>
+    <string name="now">Bây giờ</string>
+    <string name="sun" translatable="false">Nắng</string>
+    <string name="city" translatable="false">Hà Nội</string>
+</resources>

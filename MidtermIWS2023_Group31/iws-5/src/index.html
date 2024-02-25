@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid full-height pt-5 pl-5">
+        <div class="row full-height">
+            <div class="col-1">
+                <ul class="nav flex-column nav-custom p-3 rounded d-flex align-items-center">
+                    <div class="header-nav mb-5 mt-2 link border-bottom border-light pb-3">
+                        <img src="./images/wind.png" class="smallIcon" alt="">
+                    </div>
+                    <li class="nav-item link text-center">
+                        <img src="./images/weather.png" alt="" class="smallIcon mb-2">
+                        <!-- <span class="d-block text-white fw-bold">Weather</span> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control input-search text-white"
+                                placeholder="Search for cities..." class="full-width">
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <h1 class="text-white location">Marid</h1>
+                            <p class="text-secondary ">Chance of rain: <span class="possibility-rain-today">0</span>%
+                            </p>
+                            <h1 class="text-white mt-5"><span class="temp-today">31</span> °C</h1>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            <img src="./images/sunny.png" class="large-icon image-today" alt="...">
+                        </div>
+                    </div>
+                    <div class="row mt-5 today-info p-3">
+                        <h6 class="text-secondary">TODAY'S FORECAST</h6>
+                        <div class="list-hour-forecasts row">
+                            <!-- <div class="col-2">
+                                <div class="card border-0 main-bg mt-3">
+                                    <div class="card-body text-center border-end p-0">
+                                        <h6 class="card-subtitle mb-2 text-muted">6:00 AM</h6>
+                                        <img src="./images/sunny.png" class=" medium-icon my-3" />
+                                        <h5 class="card-title text-white">31 °C</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card border-0 main-bg mt-3">
+                                    <div class="card-body text-center border-end p-0">
+                                        <h6 class="card-subtitle mb-2 text-muted">6:00 AM</h6>
+                                        <img src="./images/sunny.png" class=" medium-icon my-3" />
+                                        <h5 class="card-title text-white">31 °C</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card border-0 main-bg mt-3">
+                                    <div class="card-body text-center border-end p-0">
+                                        <h6 class="card-subtitle mb-2 text-muted">6:00 AM</h6>
+                                        <img src="./images/sunny.png" class=" medium-icon my-3" />
+                                        <h5 class="card-title text-white">31 °C</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card border-0 main-bg mt-3">
+                                    <div class="card-body text-center border-end p-0">
+                                        <h6 class="card-subtitle mb-2 text-muted">6:00 AM</h6>
+                                        <img src="./images/sunny.png" class=" medium-icon my-3" />
+                                        <h5 class="card-title text-white">31 °C</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card border-0 main-bg mt-3">
+                                    <div class="card-body text-center border-end p-0">
+                                        <h6 class="card-subtitle mb-2 text-muted">6:00 AM</h6>
+                                        <img src="./images/sunny.png" class=" medium-icon my-3" />
+                                        <h5 class="card-title text-white">31 °C</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card border-0 main-bg mt-3">
+                                    <div class="card-body text-center border-end p-0">
+                                        <h6 class="card-subtitle mb-2 text-muted">6:00 AM</h6>
+                                        <img src="./images/sunny.png" class=" medium-icon my-3" />
+                                        <h5 class="card-title text-white">31 °C</h5>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="row mt-5 p-5 detail-info align-items-center">
+                        <div class="col-6">
+                            <h6 class="text-secondary">AIR CONDITIONS</h6>
+                        </div>
+                        <div class="col-6 mb-2 text-end">
+                            <button type="button" class="btn btn-primary btn-sm">See more</button>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h6 class="text-secondary">Real Feel</h6>
+                            <h4 class="text-white"><span class="real-feel-temp-today">31</span> °C</h4>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h6 class="text-secondary">Wind</h6>
+                            <h4 class="text-white"><span class="wind-today">31</span> mi/h</h4>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <h6 class="text-secondary fw-bold">Chance of rain</h6>
+                            <h4 class="text-white"><span class="chance-rain-today">31</span> %</h4>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <h6 class="text-secondary">Hour of sun</h6>
+                            <h4 class="text-white"><span class="hos-today">31</span> hours</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="container-fluid main-bg text-white mt-5 rounded p-4">
+                    <div class="col-12">
+                        <h6 class="text-secondary mb-4">5-DAY FORECAST</h6>
+                    </div>
+                    <div class="list-forecast">
+                        <div class="d-flex justify-content-between pb-3 border-bottom mb-4">
+                            <span class="text-secondary">Today</span>
+                            <div class="d-inline-block">
+                                <img src="https://developer.accuweather.com/sites/default/files/01-s.png"
+                                    class="smallIcon" alt="">
+                                <span>Sunny</span>
+                            </div>
+                            <span><span class="text-secondary fw-bold">36/22 °C</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="scripts.js"></script>
+
+</html>
